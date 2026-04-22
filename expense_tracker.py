@@ -43,4 +43,14 @@ def add_expense():
     data.append({"category":category, "amount":amount, "date":date, "time":time})
     save(data, EXPENSE_FILE)
 
+def monthly_expense():
+    month = input("Enter month (YYYY-MM): ")
+    data = load(EXPENSE_FILE)
+
+    total = 0
+    for exp in data:
+        if exp["date"].startswith(month):
+            total += exp["amount"]
+    
+    print("Total expense: ", total)
 
