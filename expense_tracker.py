@@ -54,3 +54,31 @@ def monthly_expense():
     
     print("Total expense: ", total)
 
+def filter():
+    print("Filter by:\n1. Date\n2. Category")
+    choice = int(input("Enter your choice: "))
+    
+    match choice:
+        case 1:
+            month_filter()
+        case 2:
+            category_filter()
+        case _:
+            print("Invalid choice")
+
+def month_filter():
+    month = input("Enter month (YYYY-MM): ")
+    data = load(EXPENSE_FILE)
+    
+    for exp in data:
+        if exp["date"].startswith(month):
+            print(f"{exp["category"]} | {exp["amount"]} | {exp["date"]}")
+
+def category_filter():
+    category = input("Enter category: ")
+    data = load(EXPENSE_FILE)
+
+    for exp in data:
+        if exp["category"] == category:
+            print(f"{exp["category"]} | {exp["amount"]} | {exp["date"]}")
+
