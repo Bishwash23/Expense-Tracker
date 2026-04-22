@@ -74,7 +74,7 @@ def month_filter():
     
     for exp in data:
         if exp["date"].startswith(month):
-            print(f"{exp["category"]} | {exp["amount"]} | {exp["date"]} | {exp["time"]}")
+            print(f'{exp["category"]} | {exp["amount"]} | {exp["date"]} | {exp["time"]}')
 
 def category_filter():
     category = input("\nEnter category: ")
@@ -82,12 +82,12 @@ def category_filter():
 
     for exp in data:
         if exp["category"] == category:
-            print(f"{exp["category"]} | {exp["amount"]} | {exp["date"]} | {exp["time"]}")
+            print(f'{exp["category"]} | {exp["amount"]} | {exp["date"]} | {exp["time"]}')
 
 def view_expenses():
     data = load(EXPENSE_FILE)
     for exp in data:
-        print(f"{exp["category"]} | {exp["amount"]} | {exp["date"]} | {exp["time"]}")
+        print(f'{exp["category"]} | {exp["amount"]} | {exp["date"]} | {exp["time"]}')
 
 def category_summary():
     category = input("\nEnter category: ")
@@ -118,7 +118,7 @@ def main():
             case 3:
                 filter()
             case 4:
-                monthly_summary
+                monthly_summary()
             case 5:
                 category_summary()
             case 6:
