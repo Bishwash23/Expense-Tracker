@@ -14,6 +14,8 @@ def load(f):
             return json.load(file)
     except FileNotFoundError:
         return []
+    except json.JSONDecodeError:
+        return []
 
 def add_category(category):
     data = load(CATEGORY_FILE)
