@@ -1,0 +1,13 @@
+[
+    {
+        "category": "rent",
+        "amount": 5000.0,
+        "date": "2026-04-22"
+    },
+    {
+        "category": "travel",
+        "amount": 400.0,
+        "date": "2026-04-22",
+        "time": "14:03"
+    }
+]
