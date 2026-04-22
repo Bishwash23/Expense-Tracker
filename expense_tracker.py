@@ -31,7 +31,7 @@ def add_expense():
     for c in category_data:
         print(c)
     category = input("Category: ").lower().strip()
-    if not category in category_data:
+    if category not in category_data:
         add_category(category)
     while True:
         try:
